@@ -18,7 +18,7 @@ public class Song {
     private Collection<String> comments;
     private int ratings;
 
-    @ManyToOne()
+    @ManyToOne
     @JsonIgnore
     private Album album;
 

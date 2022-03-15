@@ -33,4 +33,9 @@ public class AlbumController {
         songRepo.save(song);
         return album;
     }
+    @PostMapping("/albums/addAlbum")
+    public Iterable<Album> addNewAlbum(@RequestBody Album album) {
+       albumRepo.save(album);
+       return getAlbums();
+    }
 }
