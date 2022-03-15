@@ -1,11 +1,12 @@
 package org.wcci.apimastery.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import org.wcci.apimastery.entity.Song;
+import org.wcci.apimastery.entity.Album;
+
 import java.util.Optional;
 
-public interface AlbumRepository {
-    public interface SongRepository extends CrudRepository<Song, Long> {
-        Optional<Song> findByNameIgnoreCase(String title);
+
+    public interface AlbumRepository extends CrudRepository<Album, Long> {
+        Optional<Album> findByNameIgnoreCase(String title);
     }
-}
+

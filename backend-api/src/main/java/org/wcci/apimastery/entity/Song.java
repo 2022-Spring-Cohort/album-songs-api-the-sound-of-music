@@ -1,6 +1,9 @@
 package org.wcci.apimastery.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -16,18 +19,19 @@ public class Song {
     private int ratings;
 
     @ManyToOne()
+    @JsonIgnore
     private Album album;
 
     public Song() {
     }
 
-    public Song(String title, String link, int duration, Collection<String> comments, int ratings, Album album) {
+    public Song(String title, String link, int duration, int ratings, Album album, String...comments) {
         this.title = title;
         this.link = link;
         this.duration = duration;
-        this.comments = comments;
         this.ratings = ratings;
         this.album = album;
+        this.comments = Arrays.asList(comments);
     }
 
     public long getId() {
@@ -56,5 +60,9 @@ public class Song {
 
     public Album getAlbum() {
         return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 }

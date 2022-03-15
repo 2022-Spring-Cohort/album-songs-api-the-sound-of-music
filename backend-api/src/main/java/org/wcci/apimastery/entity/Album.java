@@ -3,6 +3,7 @@ package org.wcci.apimastery.entity;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import javax.persistence.*;
@@ -26,11 +27,11 @@ public class Album {
     public Album() {
     }
 
-    public Album(String title, String image, String recordLabel, Collection<String> comments, int ratings, Song...songs) {
+    public Album(String title, String image, String recordLabel, int ratings, Song... songs) {
         this.title = title;
         this.image = image;
         this.recordLabel = recordLabel;
-        this.comments = comments;
+        this.comments = new ArrayList<String>();
         this.ratings = ratings;
         this.songs = Arrays.asList(songs);
     }
@@ -61,5 +62,12 @@ public class Album {
 
     public Collection<Song> getSongs() {
         return songs;
+    }
+
+    public void addComments(String newComment){
+        comments.add(newComment);
+    }
+    public void addSongs(Song newSong){
+        songs.add(newSong);
     }
 }
