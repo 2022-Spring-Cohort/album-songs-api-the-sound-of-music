@@ -7,6 +7,6 @@ import java.util.Optional;
 
 
     public interface AlbumRepository extends CrudRepository<Album, Long> {
-        Optional<Album> findByNameIgnoreCase(String title);
+        Optional<Album> findByTitleIgnoreCase(String title);
     }
 

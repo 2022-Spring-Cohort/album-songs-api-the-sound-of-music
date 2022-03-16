@@ -8,5 +8,5 @@ import java.util.Optional;
 
 public interface SongRepository extends CrudRepository<Song,Long> {
 
-    Optional<Song> findByNameIgnoreCase(String title);
+    Optional<Song> findByTitleIgnoreCase(String title);
 }
