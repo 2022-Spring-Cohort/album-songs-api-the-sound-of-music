@@ -1,0 +1,25 @@
+###
+GET http://locahost:8080/albums
+###
+POST http://localhost:8080/albums/1/addSong
+Content-Type: application/json
+
+{
+    "title": "the sound of music",
+    "link": "/goodSong/link11",
+    "duration": 400,
+    "ratings": 3 
+}
+
+###
+POST http://localhost:8080/albums/addAlbum
+Content-Type: application/json
+
+{
+    "title": "three dogs",
+    "image": "http://songs/threedogs.jpg",
+    "recordLabel": "three dogs",
+    "ratings": 4
+}
+
+ 
