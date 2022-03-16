@@ -1,5 +1,5 @@
-export default function footer(){
-    return `<footer class="main-footer">
-    <small class="main-footer__copyright">We Can Code IT &copy;2020</small>
-    </footer>`
+export default function footer() {
+  return `<footer class="main-footer">
+    <small class="main-footer__copyright">The Sound of Music &copy;2022</small>
+    </footer>`;
 }
