@@ -67,7 +67,15 @@ public class Album {
     public void addComments(String newComment){
         comments.add(newComment);
     }
+
     public void addSongs(Song newSong){
         songs.add(newSong);
     }
+
+    public void setComments(Collection<String> comments) {
+        this.comments = comments;
+    }
+
+
+
 }

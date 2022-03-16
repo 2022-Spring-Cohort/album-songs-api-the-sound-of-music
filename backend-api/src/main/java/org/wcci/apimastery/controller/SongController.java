@@ -3,6 +3,7 @@ package org.wcci.apimastery.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.entity.Song;
 import org.wcci.apimastery.repository.AlbumRepository;
@@ -27,4 +28,8 @@ public class SongController {
     public Song getSong(@PathVariable Long id){
         return songRepo.findById(id).get();
     }
+
+
+
+
 }

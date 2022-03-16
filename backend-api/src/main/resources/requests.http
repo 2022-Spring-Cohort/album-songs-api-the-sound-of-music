@@ -1,6 +1,11 @@
-###
-GET http://locahost:8080/albums
-###
+### get all albums
+GET http://localhost:8080/albums
+
+
+### get songs
+GET http://localhost:8080/songs
+
+### add a song into album 1
 POST http://localhost:8080/albums/1/addSong
 Content-Type: application/json
 
@@ -11,7 +16,7 @@ Content-Type: application/json
     "ratings": 3 
 }
 
-###
+### add a new album
 POST http://localhost:8080/albums/addAlbum
 Content-Type: application/json
 
@@ -22,4 +27,5 @@ Content-Type: application/json
     "ratings": 4
 }
 
- 
+
+
