@@ -17,9 +17,9 @@ Content-Type: application/json
 }
 
 ### add comment for album
-POST http://localhost:8080/albums/updateAlbumComment/1
+POST http://localhost:8080/albums/1/updateAlbumComment
 
-I don't like this album.
+I like this album.
 
 
 # Content-Type: application/json
