@@ -1,9 +1,8 @@
 package org.wcci.apimastery.controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.entity.Album;
 import org.wcci.apimastery.entity.Song;
 import org.wcci.apimastery.repository.AlbumRepository;
 import org.wcci.apimastery.repository.SongRepository;
@@ -26,5 +25,20 @@ public class SongController {
     @GetMapping("/songs/{id}")
     public Song getSong(@PathVariable Long id){
         return songRepo.findById(id).get();
+    }
+
+    @PostMapping("/albums/{id}/addSong")
+    public Album addSongToAlbum(@PathVariable long id, @RequestBody Song song){
+        Album album = albumRepo.findById(id).get();
+        song.setAlbum(album);
+        songRepo.save(song);
+        return album;
+    }
+
+    @DeleteMapping("/songs/{id}")
+    public Iterable<Song> deleteSong(@PathVariable long id)
+    {
+        songRepo.delete(songRepo.findById(id).get());
+        return  songRepo.findAll();
     }
 }

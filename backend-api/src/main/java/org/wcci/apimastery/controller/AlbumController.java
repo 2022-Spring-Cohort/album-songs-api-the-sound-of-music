@@ -26,13 +26,15 @@ public class AlbumController {
     public Album getAlbum(@PathVariable long id){
         return albumRepo.findById(id).get();
     }
-    @PostMapping("/albums/{id}/addSong")
-    public Album addSongToAlbum(@PathVariable long id, @RequestBody Song song){
-        Album album = albumRepo.findById(id).get();
-        song.setAlbum(album);
-        songRepo.save(song);
-        return album;
-    }
+
+// I added the same code below into songController
+//    @PostMapping("/albums/{id}/addSong")
+//    public Album addSongToAlbum(@PathVariable long id, @RequestBody Song song){
+//        Album album = albumRepo.findById(id).get();
+//        song.setAlbum(album);
+//        songRepo.save(song);
+//        return album;
+//    }
     @PostMapping("/albums/addAlbum")
     public Iterable<Album> addNewAlbum(@RequestBody Album album) {
        albumRepo.save(album);
