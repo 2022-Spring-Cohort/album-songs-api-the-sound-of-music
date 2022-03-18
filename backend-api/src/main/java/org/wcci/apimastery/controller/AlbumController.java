@@ -7,6 +7,8 @@ import org.wcci.apimastery.entity.Song;
 import org.wcci.apimastery.repository.AlbumRepository;
 import org.wcci.apimastery.repository.SongRepository;
 
+import java.util.Collection;
+
 @RestController
 public class AlbumController {
 

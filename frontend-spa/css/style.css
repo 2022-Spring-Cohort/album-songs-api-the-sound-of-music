@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  /* .album-container {
+    display: flex;
+    min-height: 70vh;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+    gap : 2em;
+    padding-top: 8em;
+    background-image: url("/img/donut-background-6.webp");
+  } */
+
+  header {
+    background: rgba(3, 30, 88, 0.089);
+    text-align: center;
+    
+  }
+
+  footer {
+    background: rgba(3, 30, 88, 0.089);
+    text-align: center;
+    font-style: italic;
+    color: darkblue; 
+    font-weight: bold;
+  }
+
+  .albums {
+    padding-left: 10px;
+    /* text-align: center; */
+}
+
+.box-wrapper{
+  width: 400px;
+  box-shadow: 2px 2px rgba(0, 0, 0, .1);
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.review{
+    color: #f9d71c;
+}
+.box-top{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.comments p{
+    font-size: 0.7rem;
+    color: #4b4b4b;
+}

@@ -1,2 +1,19 @@
 ###
+<<<<<<< HEAD
 GET http://localhost:8080/albums
+=======
+GET http://localhost:8080/albums/1
+
+###
+POST http://localhost:8080/albums/addAlbum
+Content-Type: application/json
+
+{
+  "title": "20 top music",
+  "image": "/images/top_20.jpg",
+  "recordLabel": "A Label",
+  "comments": [],
+  "ratings": 2,
+  "songs": []
+}
+>>>>>>> ff302ca6e1f3e5f7ba4ecdf23d635d87dc208149
