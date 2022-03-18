@@ -78,11 +78,8 @@ function makeAlbumView(albumId) {
         console.log(album);
         makeHomeView();
       });
-      const reviewEl = albumContainer.querySelector(".review");
-      //TODO Loop 5 times
-      let starEl = document.createElement('i');
-      starEl.classList.add()
-      reviewEl.appendChild(starEl);
+    
+   
       
       const songTitleInput = albumContainer.querySelector(".songTitleInput");
       const songLinkInput = albumContainer.querySelector(".songLinkInput");
