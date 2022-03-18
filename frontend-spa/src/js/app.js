@@ -78,23 +78,8 @@ function makeAlbumView(albumId) {
         console.log(album);
         makeHomeView();
       });
-      const reviewEl = albumContainer.querySelector(".review");
-      //TODO Loop 5 times
-      for (let count = 0; count < album.ratings; count++) {
     
-        let starEl = document.createElement('i');
-        starEl.classList.add(".fas-fa-star");
-        reviewEl.appendChild(starEl);
-        
-      }
-      for (let Count2 = 0; Count2 <(5-album.ratings); Count2++) {
-        let starEl = document.createElement('i');
-        starEl.classList.add(".far-fa-star");
-        reviewEl.appendChild(starEl);
-    }
-      // let starEl = document.createElement('i');
-      // starEl.classList.add()
-      // reviewEl.appendChild(starEl);
+   
       
       const songTitleInput = albumContainer.querySelector(".songTitleInput");
       const songLinkInput = albumContainer.querySelector(".songLinkInput");

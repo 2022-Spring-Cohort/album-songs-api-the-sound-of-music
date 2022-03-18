@@ -69,4 +69,8 @@ public class Song {
     public void addComments(String newComment){
         comments.add(newComment);
     }
+
+    public void updateTitle(String newTitle){
+        title = newTitle;
+    }
 }
