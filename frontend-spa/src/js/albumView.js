@@ -6,7 +6,7 @@ export default function albumView(album) {
         </div>
         <div song-list-input>
             ${album.songs
-            .map((song) => {
+              .map((song) => {
                 return `
                     <div class="listsongs">
                         <p >Title: ${song.title}</p>
@@ -16,8 +16,8 @@ export default function albumView(album) {
                     </div>        
                 
                 `;
-            })
-            .join("")}
+              })
+              .join("")}
             <div class="song-input">
                 <input type="text" placeholder="Song Title: " class="songTitleInput" />
                 <input type="text" placeholder="Song Link: " class="songLinkInput" />
@@ -69,4 +69,3 @@ export default function albumView(album) {
     </section>
     `;
 }
-

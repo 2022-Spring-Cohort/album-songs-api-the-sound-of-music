@@ -1,6 +1,10 @@
 ###
 GET http://localhost:8080/albums/1
 
+
+###
+GET http://localhost:8080/songs/4
+
 ###
 POST http://localhost:8080/albums/addAlbum
 Content-Type: application/json
@@ -15,6 +19,26 @@ Content-Type: application/json
   "ratings": 2,
   "songs": []
 }
+
+
+
+###
+POST http://localhost:8080/albums/1/addSong
+Content-Type: application/json
+
+{
+  "id": 6,
+  "title": "badSong",
+  "link": "/badSong/link",
+  "duration": 10,
+  "comments": [],
+  "ratings": 1
+}
+
+###
+DELETE  http://localhost:8080/albums/1
+
+
 
 ### add comment for album
 POST http://localhost:8080/albums/1/updateAlbumComment

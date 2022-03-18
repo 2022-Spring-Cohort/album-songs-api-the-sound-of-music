@@ -44,25 +44,33 @@ function addAlbum() {
       title: albumTitleInput.value,
       image: albumImageInput.value,
       recordLabel: albumRecordLabelInput.value,
-      ratings: albumRatingsInput.value
+      ratings: albumRatingsInput.value,
     };
 
-    fetch('http://localhost:8080/albums/addAlbum', {
-    method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newAlbumJson),
-        })
+    fetch("http://localhost:8080/albums/addAlbum", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAlbumJson),
+    })
       .then((res) => res.json())
       .then((albums) => {
         makeHomeView();
       });
-  
   });
-  
-
 }
+
+const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
+deleteAlbumButton.addEventListener("click", () => {
+  fetch("/albums/{id}" + albumIdEl.value, {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((newAlbums) => {
+      makeHomeView(newAlbums);
+    });
+});
 
 function makeAlbumView(albumId) {
   fetch(`http://localhost:8080/albums/` + albumId)
@@ -72,13 +80,13 @@ function makeAlbumView(albumId) {
       albumContainer.innerHTML = header();
       albumContainer.innerHTML += albumView(album);
       albumContainer.innerHTML += footer();
-      
+
       const backButton = albumContainer.querySelector(".back-navigation");
       backButton.addEventListener("click", () => {
         console.log(album);
         makeHomeView();
       });
-    
+
       //const reviewEl = albumContainer.querySelector(".review");
       // const reviewEl = albumContainer.querySelector(".song-container");
       const reviewEl = albumContainer.querySelector(".ratings");
@@ -86,23 +94,22 @@ function makeAlbumView(albumId) {
       
 
       for (let count = 0; count < album.ratings; count++) {
-        let starEl = document.createElement('i');
+        let starEl = document.createElement("i");
         starEl.classList.add("fas");
         starEl.classList.add("fa-star");
         console.log(reviewEl);
         reviewEl.appendChild(starEl);
       }
-      for (let Count2 = 0; Count2 <(5-album.ratings); Count2++) {
-        let starEl = document.createElement('i');
+      for (let Count2 = 0; Count2 < 5 - album.ratings; Count2++) {
+        let starEl = document.createElement("i");
         starEl.classList.add("far");
         starEl.classList.add("fa-star");
         reviewEl.appendChild(starEl);
       }
 
-
       console.log(starEl);
       // class="fas fa-star"
-      
+
       const songTitleInput = albumContainer.querySelector(".songTitleInput");
       const songLinkInput = albumContainer.querySelector(".songLinkInput");
       const songDurationInput =
@@ -118,6 +125,7 @@ function makeAlbumView(albumId) {
           duration: songDurationInput.value,
           ratings: songRatingsInput.value,
         };
+        console.log(newSongJson);
         fetch(`http://localhost:8080/albums/${albumId}/addSong`, {
           method: "POST",
           headers: {
@@ -132,7 +140,5 @@ function makeAlbumView(albumId) {
       });
     });
 }
-
-
 
 makeHomeView();

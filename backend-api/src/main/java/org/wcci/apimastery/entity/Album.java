@@ -21,7 +21,7 @@ public class Album {
     private Collection<String> comments;
     private int ratings;
 
-    @OneToMany(mappedBy="album")
+    @OneToMany(mappedBy="album", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Song> songs;
 
     public Album() {
