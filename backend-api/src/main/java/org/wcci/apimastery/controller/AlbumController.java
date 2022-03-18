@@ -38,4 +38,12 @@ public class AlbumController {
        albumRepo.save(album);
        return getAlbums();
     }
+
+
+    @DeleteMapping("/albums/{id}")
+    public Iterable<Album> deleteAlbum(@PathVariable long id)
+    {
+        albumRepo.delete(albumRepo.findById(id).get());
+        return  albumRepo.findAll();
+    }
 }
