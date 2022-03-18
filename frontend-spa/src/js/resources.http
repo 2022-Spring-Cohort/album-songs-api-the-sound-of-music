@@ -9,7 +9,35 @@ Content-Type: application/json
   "title": "20 top music",
   "image": "/images/top_20.jpg",
   "recordLabel": "A Label",
-  "comments": [],
+  "comments": [
+    
+  ],
   "ratings": 2,
   "songs": []
 }
+
+### add comment for album
+POST http://localhost:8080/albums/updateAlbumComment/1
+
+I don't like this album.
+
+
+# Content-Type: application/json
+# {
+#   "comments": ["this"]
+# }
+
+# const element = document.querySelector('#put-request .date-updated');
+# const requestOptions = {
+#     method: 'PUT',
+#     headers: { 'Content-Type': 'application/json' },
+#     body: JSON.stringify({ title: 'Fetch PUT Request Example' })
+# };
+# fetch('https://reqres.in/api/articles/1', requestOptions)
+#     .then(response => response.json())
+#     .then(data => element.innerHTML = data.updatedAt );
+
+
+#     "comments": [
+#     {"it is good album."}
+#   ]

@@ -41,4 +41,13 @@ public class AlbumController {
        return getAlbums();
     }
 
+    @PostMapping("/albums/updateAlbumComment/{id}")
+    public Iterable<Album> updateAlbumComment(@PathVariable long id, @RequestBody String newComment) {
+        Album theAlbum = albumRepo.findById(id).get();
+        theAlbum.addComments(newComment);
+        albumRepo.save(theAlbum);
+
+        return albumRepo.findAll();
+    }
+
 }
