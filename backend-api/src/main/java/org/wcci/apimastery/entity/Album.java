@@ -56,6 +56,7 @@ public class Album {
         return comments;
     }
 
+
     public int getRatings() {
         return ratings;
     }
