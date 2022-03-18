@@ -111,4 +111,6 @@ function makeAlbumView(albumId) {
     });
 }
 
+
+
 makeHomeView();

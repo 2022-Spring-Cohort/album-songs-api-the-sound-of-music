@@ -65,4 +65,8 @@ public class Song {
     public void setAlbum(Album album) {
         this.album = album;
     }
+
+    public void addComments(String newComment){
+        comments.add(newComment);
+    }
 }

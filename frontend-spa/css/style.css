@@ -29,7 +29,35 @@
 
   .albums {
     padding-left: 10px;
-    /* text-align: center; */
+    padding-bottom: 2em;
+   
+}
+
+.album-input{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: 5em;
+  
+}
+
+.album-list{
+  display: flex;
+  gap: 17em;
+  
+}
+
+.album-title{
+  font-style: italic;
+  text-shadow: 0 0 3px red;
+}
+
+.addAlbumButton{
+  background-color: lightgreen;
+  height: 3em;
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
 }
 
 .box-wrapper{
