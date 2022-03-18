@@ -40,7 +40,7 @@ public class SongController {
     {
         Song song  = songRepo.findById(id).get();
         song.updateTitle(newTitle);
-        songRepo.save(album);
+        songRepo.save(song);
         return  songRepo.findAll();
     }
 
