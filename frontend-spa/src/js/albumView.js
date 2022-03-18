@@ -25,43 +25,41 @@ export default function albumView(album) {
         </div>
         
         <section class="album-comment">
-        <h2>Album Comment:</h2>
+            <h2>Album Comment:</h2>
 
-        ${album.comments
-          .map((comment) => {
-            return `
-            <div class="comment-container" >
-            
-                <div class="box-wrapper">
-    
-                    <div class="box-top">
-               
-                        <div class="review">
+            ${album.comments
+            .map((comment) => {
+                return `
+                <div class="comment-container" >
+                
+                    <div class="box-wrapper">
+        
+                        <div class="box-top">
+                
+                            <div class="review">
 
-                        
-                            
-
-    
+                        </div>
                     </div>
-                </div>
-    
-                <div class="comments">
-                    <p>${comment.comment} </p>
-                    
-                </div>
+        
+                    <div class="comments">
+                        <p>${comment.comment} </p>
+                        
+                    </div>
 
+                </div>
             </div>
-        </div>
-            `;
-          })
-          .join("")}
-        <div class="album-comment-container">
-            <textarea id="album-comment" name="album-comment" rows="4" cols="50"></textarea>
-            <button class="addAlbumComment">Add Comment</button>
-        </div>
+                `;
+            }).join("")
+            }
+
+            <div class="album-comment-container">
+                <textarea id="album-comment" name="album-comment" rows="4" cols="50"></textarea>
+                <button class="addAlbumComment">Add Comment</button>
+            </div>
         </section>
-        <button>
-                    <a class="back-navigation">back to albums listings</a>
+
+        <button class="back-to-album-list-btn">
+             <a class="back-navigation">back to albums listings</a>
         </button>
     </section>
     `;

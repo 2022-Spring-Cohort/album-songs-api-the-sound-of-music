@@ -60,6 +60,13 @@
   font-weight: 900;
 }
 
+/* styling song list view*/
+.back-to-album-list-btn {
+  padd
+  background-color: darkkhaki;
+}
+
+/* styling starts */
 .box-wrapper{
   width: 400px;
   box-shadow: 2px 2px rgba(0, 0, 0, .1);
