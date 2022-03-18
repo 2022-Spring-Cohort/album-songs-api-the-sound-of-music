@@ -79,7 +79,28 @@ function makeAlbumView(albumId) {
         makeHomeView();
       });
     
-   
+      //const reviewEl = albumContainer.querySelector(".review");
+      const reviewEl = albumContainer.querySelector(".song-container");
+      let starEl = document.createElement('i');
+      
+
+      for (let count = 0; count < album.ratings; count++) {
+        let starEl = document.createElement('i');
+        starEl.classList.add("fas");
+        starEl.classList.add("fa-star");
+        console.log(reviewEl);
+        reviewEl.appendChild(starEl);
+      }
+      for (let Count2 = 0; Count2 <(5-album.ratings); Count2++) {
+        let starEl = document.createElement('i');
+        starEl.classList.add("far");
+        starEl.classList.add("fa-star");
+        reviewEl.appendChild(starEl);
+      }
+
+
+      console.log(starEl);
+      // class="fas fa-star"
       
       const songTitleInput = albumContainer.querySelector(".songTitleInput");
       const songLinkInput = albumContainer.querySelector(".songLinkInput");

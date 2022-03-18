@@ -36,7 +36,7 @@ export default function albumView(album) {
         
                         <div class="box-top">
                 
-                            <div class="review">
+                            <div class="review"> </div>
 
                         </div>
                     </div>
