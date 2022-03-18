@@ -58,5 +58,13 @@ public class AlbumController {
 
         return albumRepo.findAll();
     }
+    @PatchMapping("/albums/{id}")
+    public Iterable<Album> UpdateAlbumName(@PathVariable long id, @RequestBody String newTitle)
+    {
+        Album album  = albumRepo.findById(id).get();
 
+        album.updateTitle(newTitle);
+        albumRepo.save(album);
+        return  albumRepo.findAll();
+    }
 }

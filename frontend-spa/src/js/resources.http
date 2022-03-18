@@ -45,6 +45,8 @@ POST http://localhost:8080/albums/1/updateAlbumComment
 
 I like this album.
 
+###
+GET http://localhost:8080/albums
 
 # Content-Type: application/json
 # {
