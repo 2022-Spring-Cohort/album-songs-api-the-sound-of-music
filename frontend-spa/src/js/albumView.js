@@ -1,6 +1,9 @@
 export default function albumView(album) {
   return `
     <section class="song-container">
+        <div class="ratings">
+            <h2>Album Title: ${album.title}</h2>
+        </div>
         <div song-list-input>
             ${album.songs
             .map((song) => {
@@ -27,6 +30,7 @@ export default function albumView(album) {
         <section class="album-comment">
             <h2>Album Comment:</h2>
 
+
             ${album.comments
             .map((comment) => {
                 return `
@@ -35,8 +39,9 @@ export default function albumView(album) {
                     <div class="box-wrapper">
         
                         <div class="box-top">
-                
+
                             <div class="review"> </div>
+                            
 
                         </div>
                     </div>

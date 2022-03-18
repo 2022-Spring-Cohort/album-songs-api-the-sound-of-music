@@ -80,7 +80,8 @@ function makeAlbumView(albumId) {
       });
     
       //const reviewEl = albumContainer.querySelector(".review");
-      const reviewEl = albumContainer.querySelector(".song-container");
+      // const reviewEl = albumContainer.querySelector(".song-container");
+      const reviewEl = albumContainer.querySelector(".ratings");
       let starEl = document.createElement('i');
       
 
