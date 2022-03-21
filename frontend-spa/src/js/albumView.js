@@ -9,7 +9,7 @@ export default function albumView(album) {
         <div song-list-input>
             <div song-list>
                 ${album.songs
-                .map((song) => {
+                  .map((song) => {
                     return `
                         <div class="listsongs">
                             <p >Title: ${song.title}</p>
@@ -18,8 +18,8 @@ export default function albumView(album) {
                             <p> Ratings: ${song.ratings}</p>
                         </div>        
                     `;
-                })
-                .join("")}
+                  })
+                  .join("")}
                 
             </div>
             <div class="song-input">
@@ -28,7 +28,7 @@ export default function albumView(album) {
                 <input type="text" placeholder="Song Duration: " class="songDurationInput" \>
                 <input type="text" placeholder="Song Ratings: " class="songRatingsInput" />
                 <button class="addSongButton">Add song</button>
-                <button class="deleteAlbumButton">Delete album"</button>
+
             </div>
         </div>
         

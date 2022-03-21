@@ -131,7 +131,7 @@ function makeAlbumView(albumId) {
 
       const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
       deleteAlbumButton.addEventListener("click", () => {
-        fetch("http://localhost:8080/albums/" + albumIdEl.value, {
+        fetch("http://localhost:8080/albums/" + albumId, {
           method: "DELETE",
         })
           .then((res) => res.json())
