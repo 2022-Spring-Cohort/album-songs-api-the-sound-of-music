@@ -13,9 +13,7 @@ export default function albumView(album) {
                     return `
                         <div class="listsongs">
                             <p >Title: ${song.title}</p>
-                            <p> Link: ${song.link}</p>
-                            <p> Duration: ${song.duration}</p>
-                            <p> Ratings: ${song.ratings}</p>
+                            
                         </div>        
                     `;
                 })
@@ -50,7 +48,8 @@ export default function albumView(album) {
                 <textarea id="album-comment" name="album-comment" rows="4" cols="50" placeholder="Good Album"></textarea>
                 <button class="addAlbumComment">Add Comment</button>
             </div>
-
+            <input type="text" placeholder="New Album Title: " class="newAlbumTitleInput" />
+            <button class="updateAlbumButton">Update album</button>
             <button class="deleteAlbumButton">Delete album</button>
         </section>
 

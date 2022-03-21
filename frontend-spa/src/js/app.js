@@ -19,9 +19,9 @@ function makeHomeView() {
       // const albumsEl = document.querySelectorAll(".albums");
 
       // albumsEl.forEach((album) => {
-        albumsEl.forEach((album) => {
+      albumsEl.forEach((album) => {
         let albumIdEl = album.querySelector(".id_album");
-        const albumImgEl = album.querySelector(".album-img")
+        const albumImgEl = album.querySelector(".album-img");
         albumImgEl.addEventListener("click", () => {
           console.log("album=" + album);
           // let albumIdEl = album.querySelector(".id_album");
@@ -31,16 +31,14 @@ function makeHomeView() {
           // console.log("id=???"+ albumId);
           // alert("You clicked me: " + albumIdEl.value);
           makeAlbumView(albumId);
-       
 
-        // album comment
-        // const albumCommentInputEl = document.querySelectorAll(
-        //   ".album-comment-Input"
-        // );
-       
-      });
+          // album comment
+          // const albumCommentInputEl = document.querySelectorAll(
+          //   ".album-comment-Input"
+          // );
+        });
         // // albumsEl.forEach((album) => {
-          
+
         //   const albumCommentInput = document.getElementById("album-comment");
         //   const addAlbumCommentBtn = document.querySelector(".addAlbumComment");
         //   // console.log("here clicked "+ albumCommentInput);
@@ -66,11 +64,9 @@ function makeHomeView() {
         // // });
 
         // delete button
-           });
-      
+      });
 
       addAlbum();
-
     });
 }
 
@@ -100,7 +96,7 @@ function addAlbum() {
     })
       .then((res) => res.json())
       .then((albums) => {
-        console.log("here 2")
+        console.log("here 2");
         makeHomeView();
       });
   });
@@ -183,6 +179,50 @@ function makeAlbumView(albumId) {
             makeAlbumView(album.id);
           });
       });
+
+      const albumCommentInput = document.getElementById("album-comment");
+      const addAlbumCommentBtn = document.querySelector(".addAlbumComment");
+      // console.log("here clicked "+ albumCommentInput);
+      addAlbumCommentBtn.addEventListener("click", () => {
+        console.log("here 1");
+        // alert("You clicked me: " +albumId);
+        const newAlbumComment = {
+          comments: albumCommentInput.value,
+        };
+        fetch(`http://localhost:8080/albums/${albumId}/updateAlbumComment`, {
+          method: "POST",
+          body: albumCommentInput.value,
+        })
+          .then((res) => res.json())
+          .then((albums) => {
+            makeAlbumView(album.id);
+          });
+      });
+
+      const updateAlbumButton = albumContainer.querySelector(".updateAlbumButton");
+      updateAlbumButton.addEventListener("click", () => {
+            const updateInput = albumContainer.querySelector(".newAlbumTitleInput");
+            fetch("http://localhost:8080/albums/" + albumId, {
+                    method: 'PATCH',
+                    body: updateInput.value
+                })
+                .then(res => res.json())
+                .then(newAlbums => {
+                    makeAlbumView(albumId);
+                })
+        })
+
+      const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
+      deleteAlbumButton.addEventListener("click", () => {
+        fetch("/albums/{id}" + albumId, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((newAlbums) => {
+            makeHomeView(newAlbums);
+          });
+      });
+
     });
 }
 
