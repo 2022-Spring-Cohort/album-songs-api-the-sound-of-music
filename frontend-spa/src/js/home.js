@@ -20,7 +20,7 @@ ${albums
   <input type="text" placeholder="Record Label: " class="albumRecordLabelInput" />
   <input type="text" placeholder="Album Ratings: " class="albumRatingsInput" />
   <button class="addAlbumButton">Add album"</button>
-  <button class="deleteAlbumButton">Delete album"</button>
+
 
 </section>
 </section>

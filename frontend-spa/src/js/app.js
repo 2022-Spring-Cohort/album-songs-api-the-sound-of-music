@@ -61,17 +61,6 @@ function addAlbum() {
   });
 }
 
-const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
-deleteAlbumButton.addEventListener("click", () => {
-  fetch("/albums/{id}" + albumIdEl.value, {
-    method: "DELETE",
-  })
-    .then((res) => res.json())
-    .then((newAlbums) => {
-      makeHomeView(newAlbums);
-    });
-});
-
 function makeAlbumView(albumId) {
   fetch(`http://localhost:8080/albums/` + albumId)
     .then((res) => res.json())
@@ -87,11 +76,21 @@ function makeAlbumView(albumId) {
         makeHomeView();
       });
 
+      const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
+      deleteAlbumButton.addEventListener("click", () => {
+        fetch("http://localhost:8080/albums/" + albumIdEl.value, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((newAlbums) => {
+            makeHomeView(newAlbums);
+          });
+      });
+
       //const reviewEl = albumContainer.querySelector(".review");
       // const reviewEl = albumContainer.querySelector(".song-container");
       const reviewEl = albumContainer.querySelector(".ratings");
-      let starEl = document.createElement('i');
-      
+      let starEl = document.createElement("i");
 
       for (let count = 0; count < album.ratings; count++) {
         let starEl = document.createElement("i");

@@ -24,6 +24,7 @@ export default function albumView(album) {
                 <input type="text" placeholder="Song Duration: " class="songDurationInput" \>
                 <input type="text" placeholder="Song Ratings: " class="songRatingsInput" />
                 <button class="addSongButton">Add song</button>
+                <button class="deleteAlbumButton">Delete album"</button>
             </div>
         </div>
         
@@ -32,7 +33,7 @@ export default function albumView(album) {
 
 
             ${album.comments
-            .map((comment) => {
+              .map((comment) => {
                 return `
                 <div class="comment-container" >
                 
@@ -54,8 +55,8 @@ export default function albumView(album) {
                 </div>
             </div>
                 `;
-            }).join("")
-            }
+              })
+              .join("")}
 
             <div class="album-comment-container">
                 <textarea id="album-comment" name="album-comment" rows="4" cols="50"></textarea>
