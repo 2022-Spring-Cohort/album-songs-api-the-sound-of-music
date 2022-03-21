@@ -77,7 +77,7 @@ public class Album {
         this.comments = comments;
     }
 
-public void updateTitle(String newTitle){
+    public void updateTitle(String newTitle){
         title = newTitle;
 }
 

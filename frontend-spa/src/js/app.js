@@ -14,16 +14,56 @@ function makeHomeView() {
       albumContainer.innerHTML += home(albums);
       albumContainer.innerHTML += footer();
 
-      const albumsEl = document.querySelectorAll(".albums");
+      const albumsEl = albumContainer.querySelectorAll(".albums");
+      // const albumImgEl = document.querySelectorAll(".album-img");
+      // const albumsEl = document.querySelectorAll(".albums");
 
+      // albumsEl.forEach((album) => {
       albumsEl.forEach((album) => {
-        album.addEventListener("click", () => {
+        let albumIdEl = album.querySelector(".id_album");
+        const albumImgEl = album.querySelector(".album-img");
+        albumImgEl.addEventListener("click", () => {
           console.log("album=" + album);
-          let albumIdEl = album.querySelector(".id_album");
+          // let albumIdEl = album.querySelector(".id_album");
+          // let albumIdEl = albumsEl.querySelector(".id_album");
+          // console.log(albumIdEl);
           albumId = albumIdEl.value;
+          // console.log("id=???"+ albumId);
           // alert("You clicked me: " + albumIdEl.value);
           makeAlbumView(albumId);
+
+          // album comment
+          // const albumCommentInputEl = document.querySelectorAll(
+          //   ".album-comment-Input"
+          // );
         });
+        // // albumsEl.forEach((album) => {
+
+        //   const albumCommentInput = document.getElementById("album-comment");
+        //   const addAlbumCommentBtn = document.querySelector(".addAlbumComment");
+        //   // console.log("here clicked "+ albumCommentInput);
+        //   addAlbumCommentBtn.addEventListener("click", () => {
+        //     console.log("here 1")
+        //     // alert("You clicked me: " +albumId);
+        //     const newAlbumComment = {
+        //       comments: albumCommentInput.value,
+        //     };
+        //     fetch(
+        //       `http://localhost:8080/albums/${albumId}/updateAlbumComment`,
+        //       {
+        //         method: "POST",
+        //         body: albumCommentInput.value
+        //       }
+        //     )
+        //       .then((res) => res.json())
+        //       .then((albums) => {
+        //         alert("You clicked me 2222: " + albumIdEl.value);
+        //         // makeHomeView();
+        //       });
+        //   });
+        // // });
+
+        // delete button
       });
 
       addAlbum();
@@ -56,10 +96,22 @@ function addAlbum() {
     })
       .then((res) => res.json())
       .then((albums) => {
+        console.log("here 2");
         makeHomeView();
       });
   });
 }
+
+// const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
+// deleteAlbumButton.addEventListener("click", () => {
+//   fetch("/albums/{id}" + albumIdEl.value, {
+//     method: "DELETE",
+//   })
+//     .then((res) => res.json())
+//     .then((newAlbums) => {
+//       makeHomeView(newAlbums);
+//     });
+// });
 
 function makeAlbumView(albumId) {
   fetch(`http://localhost:8080/albums/` + albumId)
@@ -73,6 +125,7 @@ function makeAlbumView(albumId) {
       const backButton = albumContainer.querySelector(".back-navigation");
       backButton.addEventListener("click", () => {
         console.log(album);
+        console.log("here 3");
         makeHomeView();
       });
 
@@ -139,5 +192,23 @@ function makeAlbumView(albumId) {
       });
     });
 }
+
+// function makeStars(album) {
+//   // const reviewEl = albumContainer.querySelector(".ratings");
+//   //     let starEl = document.createElement('i');
+//   for (let count = 0; count < album.ratings; count++) {
+//     let starEl = document.createElement("i");
+//     starEl.classList.add("fas");
+//     starEl.classList.add("fa-star");
+//     // console.log(reviewEl);
+//     reviewEl.appendChild(starEl);
+//   }
+//   for (let Count2 = 0; Count2 < 5 - album.ratings; Count2++) {
+//     let starEl = document.createElement("i");
+//     starEl.classList.add("far");
+//     starEl.classList.add("fa-star");
+//     reviewEl.appendChild(starEl);
+//   }
+// }
 
 makeHomeView();

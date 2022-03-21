@@ -33,6 +33,11 @@ public class Populator implements CommandLineRunner {
         Song song1 = new Song("goodSong","/goodSong/link",120,5,album1);
         songRepo.save(song1);
         Song song2 = new Song("Insignificance", "https://www.pinterest.com/pin/495818240198882411/", 340, 5, album1);
+        songRepo.save(song2);
+        Song song3 = new Song("Insignificance 1 ", "https://www.pinterest.com/pin/495818240198882411/", 240, 3, album2);
+        songRepo.save(song3);
+        Song song4 = new Song("Insignificance 2", "https://www.pinterest.com/pin/495818240198882411/", 140, 1, album2);
+        songRepo.save(song4);
 
 
 
