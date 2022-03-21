@@ -1,23 +1,27 @@
 export default function albumView(album) {
   return `
     <section class="song-container">
+        
         <div class="ratings">
             <h2>Album Title: ${album.title}</h2>
         </div>
+        
         <div song-list-input>
-            ${album.songs
-              .map((song) => {
-                return `
-                    <div class="listsongs">
-                        <p >Title: ${song.title}</p>
-                        <p> Link: ${song.link}</p>
-                        <p> Duration: ${song.duration}</p>
-                        <p> Ratings: ${song.ratings}</p>
-                    </div>        
+            <div song-list>
+                ${album.songs
+                .map((song) => {
+                    return `
+                        <div class="listsongs">
+                            <p >Title: ${song.title}</p>
+                            <p> Link: ${song.link}</p>
+                            <p> Duration: ${song.duration}</p>
+                            <p> Ratings: ${song.ratings}</p>
+                        </div>        
+                    `;
+                })
+                .join("")}
                 
-                `;
-              })
-              .join("")}
+            </div>
             <div class="song-input">
                 <input type="text" placeholder="Song Title: " class="songTitleInput" />
                 <input type="text" placeholder="Song Link: " class="songLinkInput" />
@@ -28,39 +32,26 @@ export default function albumView(album) {
         </div>
         
         <section class="album-comment">
-            <h2>Album Comment:</h2>
-
-
+            <h2 class="album-comment-h2">Album Comment:</h2>
             ${album.comments
             .map((comment) => {
                 return `
                 <div class="comment-container" >
-                
-                    <div class="box-wrapper">
-        
-                        <div class="box-top">
-
-                            <div class="review"> </div>
-                            
-
-                        </div>
-                    </div>
-        
-                    <div class="comments">
-                        <p>${comment.comment} </p>
-                        
-                    </div>
-
+                    <ul class="display-album-comment">
+                        <li>${comment}</li>
+                    </ul>
                 </div>
-            </div>
+            
                 `;
             }).join("")
             }
 
-            <div class="album-comment-container">
-                <textarea id="album-comment" name="album-comment" rows="4" cols="50"></textarea>
+            <div class="album-comment-Input">
+                <textarea id="album-comment" name="album-comment" rows="4" cols="50" placeholder="Good Album"></textarea>
                 <button class="addAlbumComment">Add Comment</button>
             </div>
+
+            <button class="deleteAlbumButton">Delete album</button>
         </section>
 
         <button class="back-to-album-list-btn">

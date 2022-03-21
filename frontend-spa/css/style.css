@@ -1,91 +1,135 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  /* .album-container {
-    display: flex;
-    min-height: 70vh;
-    flex-direction: column;
-    margin: 0;
-    text-align: center;
-    gap : 2em;
-    padding-top: 8em;
-    background-image: url("/img/donut-background-6.webp");
-  } */
+  box-sizing: border-box;
+  margin: 0;
+}
+/* .album-container {
+  display: flex;
+  min-height: 70vh;
+  flex-direction: column;
+  margin: 0;
+  text-align: center;
+  gap : 2em;
+  padding-top: 8em;
+  background-image: url("/img/donut-background-6.webp");
+} */
 
-  header {
-    background: rgba(3, 30, 88, 0.089);
-    text-align: center;
-    
-  }
+header {
+  background: rgba(3, 30, 88, 0.089);
+  text-align: center;
+  
+}
 
-  footer {
-    background: rgba(3, 30, 88, 0.089);
-    text-align: center;
-    font-style: italic;
-    color: darkblue; 
-    font-weight: bold;
-  }
+footer {
+  background: rgba(3, 30, 88, 0.089);
+  text-align: center;
+  font-style: italic;
+  color: darkblue; 
+  font-weight: bold;
+}
 
-  .albums {
-    padding-left: 10px;
-    padding-bottom: 2em;
-   
+.albums {
+  padding-left: 10px;
+  padding-bottom: 2em;
+ 
 }
 
 .album-input{
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  padding-top: 5em;
-  
+display: flex;
+flex-direction: column;
+gap: 1em;
+padding-top: 5em;
+
 }
 
 .album-list{
-  display: flex;
-  gap: 17em;
-  
+display: flex;
+gap: 17em;
+
 }
 
 .album-title{
-  font-style: italic;
-  text-shadow: 0 0 3px red;
+font-style: italic;
+text-shadow: 0 0 3px red;
 }
 
 .addAlbumButton{
-  background-color: lightgreen;
-  height: 3em;
-  border-radius: 5px;
-  color: darkgreen;
-  font-weight: 900;
+background-color: lightgreen;
+height: 3em;
+border-radius: 5px;
+color: darkgreen;
+font-weight: 900;
 }
 
-/* styling song list view*/
+.deleteAlbumButton{
+background-color: lightgreen;
+height: 3em;
+border-radius: 5px;
+color: darkgreen;
+font-weight: 900;
+}
+
+/* styling song list view */
 .back-to-album-list-btn {
-  padding-top: 3em;
-  background-color: darkkhaki;
+background-color: darkkhaki;
+padding-left: 2em;
 }
 
+.ratings{
+  padding-left: 2em;
+  padding-top: 1em;
+  text-shadow: 0 0 3px red;
+  font-style: italic;
+  padding-bottom: 1em;
+}
+/* .song-container{
+  display: flex;
+} */
+
+.song-list-input{
+  display: flex;
+  gap: 17em;
+  padding-left: 2em;
+}
+
+.listsongs{
+  padding-left: 2em;
+  padding-bottom: 2em;
+}
+
+/* .album-comment-Input{
+  padding-left: 2em;
+  padding-bottom: 2em;
+} */
+.album-comment-h2{
+  padding-left: 1.5em;
+  text-shadow: 0 0 3px red;
+  font-style: italic;
+  padding-top: 1em;
+}
+
+.back-to-album-list-btn{
+  
+}
 /* styling starts */
 .box-wrapper{
-  width: 400px;
-  box-shadow: 2px 2px rgba(0, 0, 0, .1);
-  background-color: #ffffff;
-  padding: 20px;
-  margin: 15px;
-  cursor: pointer;
+width: 400px;
+box-shadow: 2px 2px rgba(0, 0, 0, .1);
+background-color: #ffffff;
+padding: 20px;
+margin: 15px;
+cursor: pointer;
 }
 
 .review{
-    color: #f9d71c;
+  color: #f9d71c;
 }
 .box-top{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .comments p{
-    font-size: 0.7rem;
-    color: #4b4b4b;
+  font-size: 0.7rem;
+  color: #4b4b4b;
 }

@@ -49,8 +49,8 @@ public class SongController {
 
         return songRepo.findAll();
     }
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 
     @PatchMapping("/songs/{id}")
     public Iterable<Song> UpdateSongName(@PathVariable long id, @RequestBody String newTitle)
@@ -61,5 +61,5 @@ public class SongController {
         return  songRepo.findAll();
     }
 
->>>>>>> 1380a318f6a1bfa2a276f9a7b6335501ad05b6c0
+//>>>>>>> 1380a318f6a1bfa2a276f9a7b6335501ad05b6c0
 }
