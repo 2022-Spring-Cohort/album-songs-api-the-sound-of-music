@@ -210,30 +210,19 @@ function makeAlbumView(albumId) {
           });
       });
 
-      const updateAlbumButton = albumContainer.querySelector(".updateAlbumButton");
+      const updateAlbumButton =
+        albumContainer.querySelector(".updateAlbumButton");
       updateAlbumButton.addEventListener("click", () => {
-            const updateInput = albumContainer.querySelector(".newAlbumTitleInput");
-            fetch("http://localhost:8080/albums/" + albumId, {
-                    method: 'PATCH',
-                    body: updateInput.value
-                })
-                .then(res => res.json())
-                .then(newAlbums => {
-                    makeAlbumView(albumId);
-                })
-        })
-
-      const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
-      deleteAlbumButton.addEventListener("click", () => {
-        fetch("/albums/{id}" + albumId, {
-          method: "DELETE",
+        const updateInput = albumContainer.querySelector(".newAlbumTitleInput");
+        fetch("http://localhost:8080/albums/" + albumId, {
+          method: "PATCH",
+          body: updateInput.value,
         })
           .then((res) => res.json())
           .then((newAlbums) => {
-            makeHomeView(newAlbums);
+            makeAlbumView(albumId);
           });
       });
-
     });
 }
 
