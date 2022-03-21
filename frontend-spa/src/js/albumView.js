@@ -13,7 +13,7 @@ export default function albumView(album) {
                     return `
                         <div class="listSongTitle">
                             <p >Title: ${song.title}</p>
-                            
+                            <input id="id" type="hidden" name="id" value="${song.id}">
                         </div>        
                     `;
                 })
