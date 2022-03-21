@@ -11,7 +11,7 @@ export default function albumView(album) {
                 ${album.songs
                 .map((song) => {
                     return `
-                        <div class="listsongs">
+                        <div class="listSongTitle">
                             <p >Title: ${song.title}</p>
                             
                         </div>        
