@@ -68,17 +68,6 @@ function addAlbum() {
   });
 }
 
-// const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
-// deleteAlbumButton.addEventListener("click", () => {
-//   fetch("/albums/{id}" + albumIdEl.value, {
-//     method: "DELETE",
-//   })
-//     .then((res) => res.json())
-//     .then((newAlbums) => {
-//       makeHomeView(newAlbums);
-//     });
-// });
-
 function makeAlbumView(albumId) {
   fetch(`http://localhost:8080/albums/` + albumId)
     .then((res) => res.json())
@@ -93,17 +82,6 @@ function makeAlbumView(albumId) {
         console.log(album);
         console.log("here 3");
         makeHomeView();
-      });
-
-      const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
-      deleteAlbumButton.addEventListener("click", () => {
-        fetch("http://localhost:8080/albums/" + albumId, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((newAlbums) => {
-            makeHomeView(newAlbums);
-          });
       });
 
       //const reviewEl = albumContainer.querySelector(".review");
@@ -131,11 +109,11 @@ function makeAlbumView(albumId) {
       const songLinkInput = albumContainer.querySelector(".songLinkInput");
       const songDurationInput =
         albumContainer.querySelector(".songDurationInput");
+      albumContainer.querySelector(".songDurationInput");
       const songRatingsInput =
         albumContainer.querySelector(".songRatingsInput");
 
-      const addSongBtn =
-        albumConlistsongTitletainer.querySelector(".addSongButton");
+      const addSongBtn = albumContainer.querySelector(".addSongButton");
       addSongBtn.addEventListener("click", () => {
         const newSongJson = {
           title: songTitleInput.value,
@@ -157,11 +135,14 @@ function makeAlbumView(albumId) {
           });
       });
 
-      const listSongTitleEl = albumContainer.querySelector(".listSongTitle");
-      listSongTitleEl.addEventListener("click", () => {
-        fetch(`http://localhsot/albums/` + albumId)
-          .then((res) => res.json())
-          .then(album.song);
+      const listSongTitleEl =
+        albumContainer.querySelectorAll(".songTitleInput");
+
+      listSongTitleEl.forEach(albums.songs, () => {
+        listSongTitleEl.addEventListener("click", () => {
+          alert("I am working");
+          // makesongView(album.songs.id);
+        });
       });
 
       // album comment
