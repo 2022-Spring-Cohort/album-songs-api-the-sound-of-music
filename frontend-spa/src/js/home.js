@@ -8,7 +8,7 @@ export default function home(albums) {
           return `<div class="albums">
                 <h2 class="album-title" >Title: ${album.title} </h2>
                 <p class="album-record-label" style="color: darkblue; font-weight: bold" >Label: ${album.recordLabel}</p>
-                <p class="album-ratings" style="color: darkblue; font-weight: bold" >Ratings: ${album.ratings}</p>
+                <p class="album-ratings" style="color: darkblue; font-weight: bold" ></p>
                 <image class="album-img" src = "${album.image}" alt = "picture of the album" width="200" height="200" />
                 <input type="hidden" class="id_album" value="${album.id}" >
                 

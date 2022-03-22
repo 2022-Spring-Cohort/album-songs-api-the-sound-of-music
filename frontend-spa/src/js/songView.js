@@ -1,21 +1,23 @@
 export default function songView(songs) {
   return `
       <section class="album-song-container">
+    
       <div class="list-of-songs">
-      
+      <div class = "song-ratings">
               <h2 class="song-title">Song Title: ${songs.title}</h2>
-      
+
+              </div>
           
           <div album-song-list>
        
-               
+         
                 <p > Link: ${songs.link}</p>
                 <p > Duration: ${songs.duration}</p>
-                <p > Ratings: ${songs.ratings}</p>
+             
             </div>        
               
-          </div>
-          
+        
+       
           <section class="album-comment">
               <h2 class="album-comment-h2">Song Comment:</h2>
 
