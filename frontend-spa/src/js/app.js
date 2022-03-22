@@ -91,7 +91,7 @@ function addAlbum() {
           makeHomeView();
         });
     } else {
-      alert("Please enter an Album name.");
+      alert("Enter an album name.");
     }
   });
 }
@@ -151,17 +151,21 @@ function makeAlbumView(albumId) {
           ratings: songRatingsInput.value,
         };
         console.log(newSongJson);
-        fetch(`http://localhost:8080/albums/${albumId}/addSong`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newSongJson),
-        })
-          .then((res) => res.json())
-          .then((album) => {
-            makeAlbumView(album.id);
-          });
+        if (newSongJson.title !== "") {
+          fetch(`http://localhost:8080/albums/${albumId}/addSong`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newSongJson),
+          })
+            .then((res) => res.json())
+            .then((album) => {
+              makeAlbumView(album.id);
+            });
+        } else {
+          alert("Enter a song title.");
+        }
       });
 
       const listSongTitleElements =
