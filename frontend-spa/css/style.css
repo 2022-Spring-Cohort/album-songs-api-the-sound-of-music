@@ -79,7 +79,6 @@ footer {
 .song-list-input {
   display: flex;
   gap: 17em;
-  padding-left: 2em;
 }
 
 .update-delete-button-song button {

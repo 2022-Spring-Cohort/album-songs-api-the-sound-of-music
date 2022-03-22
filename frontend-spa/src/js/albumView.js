@@ -6,7 +6,7 @@ export default function albumView(album) {
             <h2>Album Title: ${album.title}</h2>
         </div>
         
-        <div song-list-input>
+        <div class =song-list-input>
             <div song-list-input>
                 ${album.songs
                   .map((song) => {
@@ -21,7 +21,7 @@ export default function albumView(album) {
                   })
                   .join("")}
             </div>    
-            
+            <div class = "song-input-container
             <div class="song-input">
                 <div>
                 <input type="text" placeholder="Song Title: " class="songTitleInput" />
