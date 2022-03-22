@@ -23,13 +23,7 @@ function makeHomeView() {
         let albumIdEl = album.querySelector(".id_album");
         const albumImgEl = album.querySelector(".album-img");
         albumImgEl.addEventListener("click", () => {
-          // console.log("album=" + album);
-          // let albumIdEl = album.querySelector(".id_album");
-          // let albumIdEl = albumsEl.querySelector(".id_album");
-          // console.log(albumIdEl);
           albumId = albumIdEl.value;
-          // console.log("id=???"+ albumId);
-          // alert("You clicked me: " + albumIdEl.value);
           makeAlbumView(albumId);
         });
       });
@@ -143,16 +137,16 @@ function makeAlbumView(albumId) {
       listSongTitleElements.forEach((listSongTitleEl) => {
         listSongTitleEl.addEventListener("click", () => {
           let songId = listSongTitleEl.querySelector("#id").value;
-          console.log(currentAlbum);
+          // console.log(currentAlbum);
 
           currentAlbum.songs.forEach((song) => {
             if (song.id == songId) {
-              console.log(song);
+              // console.log(song);
               currentSong = song;
             }
           });
 
-          console.log("song again " + currentSong);
+          // console.log("song again " + currentSong);
           makeSongView(songId);
         });
       });
@@ -160,10 +154,7 @@ function makeAlbumView(albumId) {
       // album comment
       const albumCommentInput = document.getElementById("album-comment");
       const addAlbumCommentBtn = document.querySelector(".addAlbumComment");
-      // console.log("here clicked "+ albumCommentInput);
       addAlbumCommentBtn.addEventListener("click", () => {
-        console.log("here 1");
-        // alert("You clicked me: " +albumId);
         const newAlbumComment = {
           comments: albumCommentInput.value,
         };
@@ -193,9 +184,10 @@ function makeAlbumView(albumId) {
       });
 
       // delete album
-      const deleteAlbumButton = document.querySelector(".deleteAlbumButton");
+      const deleteAlbumButton =
+        albumContainer.querySelector(".deleteAlbumButton");
       deleteAlbumButton.addEventListener("click", () => {
-        fetch("/albums/{id}" + albumId, {
+        fetch("http://localhost:8080/albums/" + albumId, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -211,18 +203,19 @@ function makeSongView(songId) {
   albumContainer.innerHTML += songView(currentSong);
   albumContainer.innerHTML += footer();
 
-  const backButton = albumContainer.querySelector(".back-navigation");
-  backButton.addEventListener("click", () => {
-    makeAlbumView(album);
+  const backSongTitleListButton = albumContainer.querySelector(
+    ".back-to-song-title-list-btn"
+  );
+  backSongTitleListButton.addEventListener("click", () => {
+    makeAlbumView(albumId);
+    // makeHomeView();
   });
 
   // song comment
-  const songCommentInput = document.getElementById("album-comment");
-  const addSongCommentBtn = document.querySelector(".addAlbumComment");
-  // console.log("here clicked "+ albumCommentInput);
+  const songCommentInput = document.getElementById("song-comment");
+  const addSongCommentBtn = document.querySelector(".addSongComment");
+
   addSongCommentBtn.addEventListener("click", () => {
-    console.log("here 1");
-    // alert("You clicked me: " +albumId);
     const newSongComment = {
       comments: songCommentInput.value,
     };
@@ -233,6 +226,34 @@ function makeSongView(songId) {
     })
       .then((res) => res.json())
       .then((songs) => {
+        makeAlbumView(albumId);
+        // makeSongView(songId);
+      });
+  });
+
+  // song title update
+  const updateSongButton = albumContainer.querySelector(".updateSongButton");
+  updateSongButton.addEventListener("click", () => {
+    const updateSongInput = albumContainer.querySelector(".newSongTitleInput");
+    fetch("http://localhost:8080/songs/" + songId, {
+      method: "PATCH",
+      body: updateSongInput.value,
+    })
+      .then((res) => res.json())
+      .then((newSongs) => {
+        // makeSongView(songId);
+        makeAlbumView(albumId);
+      });
+  });
+
+  // delete song
+  const deleteSongBtn = albumContainer.querySelector(".deleteSongButton");
+  deleteSongBtn.addEventListener("click", () => {
+    fetch("http://localhost:8080/songs/" + songId, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((newSongs) => {
         makeSongView(songId);
       });
   });

@@ -16,66 +16,67 @@
 header {
   background: rgba(3, 30, 88, 0.089);
   text-align: center;
-  
 }
 
 footer {
   background: rgba(3, 30, 88, 0.089);
   text-align: center;
   font-style: italic;
-  color: darkblue; 
+  color: darkblue;
   font-weight: bold;
 }
 
 .albums {
   padding-left: 10px;
   padding-bottom: 2em;
- 
 }
 
-.album-input{
-display: flex;
-flex-direction: column;
-gap: 1em;
-padding-top: 5em;
-
+.album-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: 5em;
 }
 
-.album-list{
-display: flex;
-gap: 17em;
-
+.album-list {
+  display: flex;
+  gap: 17em;
 }
 
-.album-title{
-font-style: italic;
-text-shadow: 0 0 3px red;
+.album-title {
+  font-style: italic;
+  text-shadow: 0 0 3px red;
 }
 
-.addAlbumButton{
-background-color: lightgreen;
-height: 3em;
-border-radius: 5px;
-color: darkgreen;
-font-weight: 900;
+.addAlbumButton {
+  background-color: lightgreen;
+  /* height: 3em; */
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
 }
 
-.deleteAlbumButton{
-background-color: lightgreen;
-height: 3em;
-border-radius: 5px;
-color: darkgreen;
-font-weight: 900;
+.deleteAlbumButton {
+  background-color: lightgreen;
+  /* height: 3em; */
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
 }
 
 /* styling song list view */
 .back-to-album-list-btn {
-background-color: darkkhaki;
-padding-left: 2em;
+  background-color: darkkhaki;
 }
 
-.ratings{
+.ratings {
   padding-left: 2em;
+  padding-top: 1em;
+  text-shadow: 0 0 3px red;
+  font-style: italic;
+  padding-bottom: 1em;
+}
+.song-title {
   padding-top: 1em;
   text-shadow: 0 0 3px red;
   font-style: italic;
@@ -85,51 +86,116 @@ padding-left: 2em;
   display: flex;
 } */
 
-.song-list-input{
+.song-list-input {
   display: flex;
   gap: 17em;
   padding-left: 2em;
 }
 
-.listsongs{
+.update-delete-button-song button {
+  background-color: lightgreen;
+  /* height: 3em; */
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
+}
+
+.listsongs {
   padding-left: 2em;
   padding-bottom: 2em;
 }
 
-/* .album-comment-Input{
+.album-song-list {
   padding-left: 2em;
   padding-bottom: 2em;
-} */
-.album-comment-h2{
+}
+
+.album-comment-Input {
+  padding-left: 2em;
+  padding-bottom: 2em;
+}
+
+.album-comment-h2 {
   padding-left: 1.5em;
   text-shadow: 0 0 3px red;
   font-style: italic;
   padding-top: 1em;
 }
 
-.back-to-album-list-btn{
-  
-}
-/* styling starts */
-.box-wrapper{
-width: 400px;
-box-shadow: 2px 2px rgba(0, 0, 0, .1);
-background-color: #ffffff;
-padding: 20px;
-margin: 15px;
-cursor: pointer;
+.album-comment-Input {
+  display: flex;
+  gap: 2em;
+  align-items: center;
 }
 
-.review{
+.addAlbumComment {
+  background-color: lightgreen;
+  /* height: 3em; */
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
+}
+.update-delete-button {
+  display: flex;
+  padding-left: 2em;
+  gap: 2em;
+  padding-bottom: 2em;
+}
+.updateAlbumButton {
+  background-color: lightgreen;
+  /* height: 3em; */
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
+}
+.back-link {
+  display: flex;
+  padding-left: 2em;
+  padding-bottom: 2em;
+}
+.song-list-input {
+  display: flex;
+}
+
+.addSongComment {
+  background-color: lightgreen;
+  /* height: 3em; */
+  border-radius: 5px;
+  color: darkgreen;
+  font-weight: 900;
+}
+/* .song-input{
+  display: flex;
+} */
+/* styling starts */
+/* .update-delete-button-song{
+  display: flex;
+  flex-direction: row;
+
+} */
+
+.back-to-song-title-list-btn {
+  background-color: darkkhaki;
+}
+.box-wrapper {
+  width: 400px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.review {
   color: #f9d71c;
 }
-.box-top{
+.box-top {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
 }
-.comments p{
+.comments p {
   font-size: 0.7rem;
   color: #4b4b4b;
 }
