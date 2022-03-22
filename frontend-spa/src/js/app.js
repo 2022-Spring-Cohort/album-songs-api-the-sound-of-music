@@ -20,7 +20,7 @@ function makeHomeView() {
       const albumsEl = albumContainer.querySelectorAll(".albums");
 
       albumsEl.forEach((album) => {
-        console.log(album)
+        console.log(album);
         let albumIdEl = album.querySelector(".id_album");
         const albumImgEl = album.querySelector(".album-img");
         albumImgEl.addEventListener("click", () => {
@@ -29,18 +29,17 @@ function makeHomeView() {
           makeAlbumView(albumId);
         });
 
-        const albumReviewStars =
-          album.querySelector(".album-ratings");
-        console.log(albumReviewStars)
+        const albumReviewStars = album.querySelector(".album-ratings");
+        console.log(albumReviewStars);
         let starEl1 = document.createElement("i");
         let albumJson = "";
-        albums.forEach(newAlbum => {
+        albums.forEach((newAlbum) => {
           const albumIdEl = album.querySelector(".id_album");
 
-          if(newAlbum.id ==albumIdEl.value ){
+          if (newAlbum.id == albumIdEl.value) {
             albumJson = newAlbum;
           }
-        })
+        });
 
         for (let count = 0; count < albumJson.ratings; count++) {
           let starEl1 = document.createElement("i");
@@ -260,7 +259,6 @@ function makeSongView(songId) {
   // song comment
   const songCommentInput = document.getElementById("song-comment");
   const addSongCommentBtn = document.querySelector(".addSongComment");
-
 
   addSongCommentBtn.addEventListener("click", () => {
     const newSongComment = {

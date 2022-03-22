@@ -1,7 +1,9 @@
 export default function songView(songs) {
   return `
       <section class="album-song-container">
-    
+      <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1">
+      </iframe>
       <div class="list-of-songs">
       <div class = "song-ratings">
               <h2 class="song-title">Song Title: ${songs.title}</h2>
