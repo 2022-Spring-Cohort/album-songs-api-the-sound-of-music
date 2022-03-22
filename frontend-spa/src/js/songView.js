@@ -8,19 +8,14 @@ export default function songView(songs) {
           
           <div album-song-list>
               <div list-of-songs>
-                  ${songs
-                    .map((song) => {
-                      return `
-                          <div class="list-songs">
-                                <p >Title: ${song.title}</p>
-                                <p> Link: ${song.link}</p>
-                                <p> Duration: ${song.duration}</p>
-                                <p> Ratings: ${song.ratings}</p>
-                          </div>        
-                      `;
-                    })
-                    .join("")}
                   
+                          <div class="list-songs">
+                                <p >Title: ${songs.title}</p>
+                                <p> Link: ${songs.link}</p>
+                                <p> Duration: ${songs.duration}</p>
+                                <p> Ratings: ${songs.ratings}</p>
+                          </div>        
+                   
               </div>
               <div class="song-input">
                   <input type="text" placeholder="Song Title: " class="songTitleInput" />
@@ -32,19 +27,15 @@ export default function songView(songs) {
           </div>
           
           <section class="album-comment">
-              <h2 class="album-comment-h2">Album Comment:</h2>
-              ${album.comments
-                .map((comment) => {
-                  return `
+              <h2 class="album-comment-h2">Song Comment:</h2>
+              
                   <div class="comment-container" >
                       <ul class="display-album-comment">
-                          <li>${comment}</li>
+                       
                       </ul>
                   </div>
               
-                  `;
-                })
-                .join("")}
+               
   
               <div class="album-comment-Input">
                   <textarea id="album-comment" name="album-comment" rows="4" cols="50" placeholder="Good Album"></textarea>
