@@ -19,11 +19,13 @@ export default function home(albums) {
 
     <div class="album-input">
       <h2 class="album-title">Add A New Album</h2>
-      <input type="text" placeholder="Album Title: " class="albumTitleInput" />
-      <input type="text" placeholder="Album Image: " class="albumImageInput" />
+      
+      <input type="text" placeholder="Album Title: " class="albumTitleInput"/>
+      <input type="text" placeholder="Album Image: " class="albumImageInput"/>
       <input type="text" placeholder="Record Label: " class="albumRecordLabelInput" />
       <input type="text" placeholder="Album Ratings: " class="albumRatingsInput" />
       <button class="addAlbumButton">Add album</button>
+  
       
     </div>    
 

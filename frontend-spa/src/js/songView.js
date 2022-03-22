@@ -40,7 +40,7 @@ export default function songView(songs) {
 
                 <div class="update-delete-button-song">
                     <div >
-                        <input type="text" placeholder="New Song Title: " class="newSongTitleInput" />
+                        <input type="text" placeholder="New Song Title: " class="newSongTitleInput"/>
                         <button class="updateSongButton">Update Song</button>
                     </div>
                     <div>

@@ -77,18 +77,22 @@ function addAlbum() {
       ratings: albumRatingsInput.value,
     };
 
-    fetch("http://localhost:8080/albums/addAlbum", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newAlbumJson),
-    })
-      .then((res) => res.json())
-      .then((albums) => {
-        console.log("here 2");
-        makeHomeView();
-      });
+    if (albumTitleInput.value !== "") {
+      fetch("http://localhost:8080/albums/addAlbum", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAlbumJson),
+      })
+        .then((res) => res.json())
+        .then((albums) => {
+          console.log("here 2");
+          makeHomeView();
+        });
+    } else {
+      alert("Please enter an Album name.");
+    }
   });
 }
 
