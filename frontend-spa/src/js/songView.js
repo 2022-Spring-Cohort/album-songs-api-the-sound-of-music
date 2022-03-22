@@ -5,12 +5,9 @@ export default function songView(songs) {
       <div class="list-of-songs">
       <div class = "song-ratings">
               <h2 class="song-title">Song Title: ${songs.title}</h2>
-
               </div>
           
           <div album-song-list>
-       
-         
                 <p > Link: ${songs.link}</p>
                 <p > Duration: ${songs.duration}</p>
              

@@ -1,6 +1,7 @@
 .update-delete-button-song {
   display: flex;
   gap: 2em;
+  padding-bottom: 2em;
 }
 
 .album-song-container {

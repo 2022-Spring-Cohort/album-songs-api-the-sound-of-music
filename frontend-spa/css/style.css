@@ -60,6 +60,7 @@ footer {
 /* styling song list view */
 .back-to-album-list-btn {
   background-color: darkkhaki;
+  border-radius: 5px;
 }
 
 .ratings {
@@ -121,7 +122,7 @@ footer {
 }
 .update-delete-button {
   display: flex;
-  padding-left: 2em;
+
   gap: 2em;
   padding-bottom: 2em;
 }
@@ -150,6 +151,7 @@ footer {
 
 .back-to-song-title-list-btn {
   background-color: darkkhaki;
+  border-radius: 5px;
 }
 
 .box-wrapper {
