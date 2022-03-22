@@ -7,25 +7,35 @@ export default function albumView(album) {
         </div>
         
         <div song-list-input>
-            <div song-list>
+            <div song-list-input>
                 ${album.songs
                 .map((song) => {
                     return `
                         <div class="listSongTitle">
-                            <p >Title: ${song.title}</p>
+                            <p >Sone title: ${song.title}</p>
                             <input id="id" type="hidden" name="id" value="${song.id}">
                         </div>        
                     `;
                 })
                 .join("")}
-                
-            </div>
+            </div>    
+            
             <div class="song-input">
+                <div>
                 <input type="text" placeholder="Song Title: " class="songTitleInput" />
+                </div>
+                <div>
                 <input type="text" placeholder="Song Link: " class="songLinkInput" />
-                <input type="text" placeholder="Song Duration: " class="songDurationInput" \>
+                </div>
+                <div>
+                <input type="text" placeholder="Song Duration: " class="songDurationInput" />
+                </div>
+                <div>
                 <input type="text" placeholder="Song Ratings: " class="songRatingsInput" />
+                </div>
+                <div>
                 <button class="addSongButton">Add song</button>
+                </div>
             </div>
         </div>
         
@@ -45,17 +55,29 @@ export default function albumView(album) {
             }
 
             <div class="album-comment-Input">
-                <textarea id="album-comment" name="album-comment" rows="4" cols="50" placeholder="Good Album"></textarea>
-                <button class="addAlbumComment">Add Comment</button>
+                <div>
+                    <textarea id="album-comment" name="album-comment" rows="4" cols="50" placeholder="Good Album"></textarea>
+                </div>
+                <div>
+                    <button class="addAlbumComment">Add Comment</button>
+                </div>
             </div>
-            <input type="text" placeholder="New Album Title: " class="newAlbumTitleInput" />
-            <button class="updateAlbumButton">Update album</button>
-            <button class="deleteAlbumButton">Delete album</button>
+            <div class="update-delete-button">
+                <div>
+                    <input type="text" placeholder="New Album Title: " class="newAlbumTitleInput" />
+                    <button class="updateAlbumButton">Update album</button>
+                </div>
+                <div>
+                    <button class="deleteAlbumButton">Delete album</button>
+                </div>
+            </div>   
         </section>
 
-        <button class="back-to-album-list-btn">
-             <a class="back-navigation">back to albums listings</a>
-        </button>
+        <section class="back-link">
+            <button class="back-to-album-list-btn">
+                <a class="back-navigation">back to albums listings</a>
+            </button>
+        </section>
     </section>
     `;
 }
