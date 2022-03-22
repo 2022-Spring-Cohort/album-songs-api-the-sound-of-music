@@ -1,5 +1,7 @@
 package org.wcci.apimastery.entity;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -9,11 +11,13 @@ import java.util.Collection;
 import javax.persistence.*;
 
 @Entity
+
 public class Album {
 
     @Id
     @GeneratedValue
     private long id;
+    @NotNull
     private String title;
     private String image;
     private String recordLabel;

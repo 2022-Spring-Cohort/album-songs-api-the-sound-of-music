@@ -20,12 +20,41 @@ function makeHomeView() {
       const albumsEl = albumContainer.querySelectorAll(".albums");
 
       albumsEl.forEach((album) => {
+        console.log(album)
         let albumIdEl = album.querySelector(".id_album");
         const albumImgEl = album.querySelector(".album-img");
         albumImgEl.addEventListener("click", () => {
           albumId = albumIdEl.value;
+
           makeAlbumView(albumId);
         });
+
+        const albumReviewStars =
+          album.querySelector(".album-ratings");
+        console.log(albumReviewStars)
+        let starEl1 = document.createElement("i");
+        let albumJson = "";
+        albums.forEach(newAlbum => {
+          const albumIdEl = album.querySelector(".id_album");
+
+          if(newAlbum.id ==albumIdEl.value ){
+            albumJson = newAlbum;
+          }
+        })
+
+        for (let count = 0; count < albumJson.ratings; count++) {
+          let starEl1 = document.createElement("i");
+          starEl1.classList.add("fas");
+          starEl1.classList.add("fa-star");
+          console.log(albumReviewStars);
+          albumReviewStars.appendChild(starEl1);
+        }
+        for (let Count2 = 0; Count2 < 5 - albumJson.ratings; Count2++) {
+          let starEl1 = document.createElement("i");
+          starEl1.classList.add("far");
+          starEl1.classList.add("fa-star");
+          albumReviewStars.appendChild(starEl1);
+        }
       });
 
       addAlbum();
@@ -203,6 +232,23 @@ function makeSongView(songId) {
   albumContainer.innerHTML += songView(currentSong);
   albumContainer.innerHTML += footer();
 
+  const songViewStars = albumContainer.querySelector(".song-ratings");
+  let starEl3 = document.createElement("i");
+
+  for (let count = 0; count < currentSong.ratings; count++) {
+    let starEl3 = document.createElement("i");
+    starEl3.classList.add("fas");
+    starEl3.classList.add("fa-star");
+    console.log(songViewStars);
+    songViewStars.appendChild(starEl3);
+  }
+  for (let Count2 = 0; Count2 < 5 - currentSong.ratings; Count2++) {
+    let starEl3 = document.createElement("i");
+    starEl3.classList.add("far");
+    starEl3.classList.add("fa-star");
+    songViewStars.appendChild(starEl3);
+  }
+
   const backSongTitleListButton = albumContainer.querySelector(
     ".back-to-song-title-list-btn"
   );
@@ -214,6 +260,7 @@ function makeSongView(songId) {
   // song comment
   const songCommentInput = document.getElementById("song-comment");
   const addSongCommentBtn = document.querySelector(".addSongComment");
+
 
   addSongCommentBtn.addEventListener("click", () => {
     const newSongComment = {
@@ -259,8 +306,8 @@ function makeSongView(songId) {
   });
 }
 // function makeStars(album) {
-//   // const reviewEl = albumContainer.querySelector(".ratings");
-//   //     let starEl = document.createElement('i');
+
+//       let starEl = document.createElement('i');
 //   for (let count = 0; count < album.ratings; count++) {
 //     let starEl = document.createElement("i");
 //     starEl.classList.add("fas");
