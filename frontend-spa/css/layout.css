@@ -1,7 +1,13 @@
 .update-delete-button-song {
   display: flex;
+  gap: 2em;
 }
 
 .album-song-container {
   padding-left: 2em;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
 }

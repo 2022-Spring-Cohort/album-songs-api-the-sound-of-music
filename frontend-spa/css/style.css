@@ -2,16 +2,6 @@
   box-sizing: border-box;
   margin: 0;
 }
-/* .album-container {
-  display: flex;
-  min-height: 70vh;
-  flex-direction: column;
-  margin: 0;
-  text-align: center;
-  gap : 2em;
-  padding-top: 8em;
-  background-image: url("/img/donut-background-6.webp");
-} */
 
 header {
   background: rgba(3, 30, 88, 0.089);
@@ -26,6 +16,9 @@ footer {
   font-weight: bold;
 }
 
+.song-container {
+  padding-left: 1.5em;
+}
 .albums {
   padding-left: 10px;
   padding-bottom: 2em;
@@ -70,7 +63,6 @@ footer {
 }
 
 .ratings {
-  padding-left: 2em;
   padding-top: 1em;
   text-shadow: 0 0 3px red;
   font-style: italic;
@@ -82,9 +74,6 @@ footer {
   font-style: italic;
   padding-bottom: 1em;
 }
-/* .song-container{
-  display: flex;
-} */
 
 .song-list-input {
   display: flex;
@@ -110,13 +99,7 @@ footer {
   padding-bottom: 2em;
 }
 
-.album-comment-Input {
-  padding-left: 2em;
-  padding-bottom: 2em;
-}
-
 .album-comment-h2 {
-  padding-left: 1.5em;
   text-shadow: 0 0 3px red;
   font-style: italic;
   padding-top: 1em;
@@ -126,6 +109,7 @@ footer {
   display: flex;
   gap: 2em;
   align-items: center;
+  padding-bottom: 2em;
 }
 
 .addAlbumComment {
@@ -150,7 +134,6 @@ footer {
 }
 .back-link {
   display: flex;
-  padding-left: 2em;
   padding-bottom: 2em;
 }
 .song-list-input {
@@ -164,19 +147,11 @@ footer {
   color: darkgreen;
   font-weight: 900;
 }
-/* .song-input{
-  display: flex;
-} */
-/* styling starts */
-/* .update-delete-button-song{
-  display: flex;
-  flex-direction: row;
-
-} */
 
 .back-to-song-title-list-btn {
   background-color: darkkhaki;
 }
+
 .box-wrapper {
   width: 400px;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.1);

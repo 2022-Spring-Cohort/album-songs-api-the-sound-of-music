@@ -1,7 +1,7 @@
 export default function albumView(album) {
   return `
     <section class="song-container">
-        
+        <div class = "flex-container">
         <div class="ratings">
             <h2>Album Title: ${album.title}</h2>
         </div>
@@ -12,8 +12,10 @@ export default function albumView(album) {
                   .map((song) => {
                     return `
                         <div class="listSongTitle">
-                            <p >Sone title: ${song.title}</p>
+                        <button>
+                            <p >Song title: ${song.title}</p>
                             <input id="id" type="hidden" name="id" value="${song.id}">
+                            </button>
                         </div>        
                     `;
                   })
@@ -37,6 +39,7 @@ export default function albumView(album) {
                 <button class="addSongButton">Add song</button>
                 </div>
             </div>
+        </div>
         </div>
         
         <section class="album-comment">
