@@ -1,12 +1,22 @@
+.album-list-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .update-delete-button-song {
   display: flex;
   gap: 2em;
   padding-bottom: 2em;
 }
-
+.song-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 .song-list-input {
   display: flex;
-  gap: 2px;
+  gap: 5em;
 }
 
 .album-song-container {
