@@ -5,17 +5,15 @@ export default function songView(songs) {
       src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1">
       </iframe>
       <div class="list-of-songs">
-      <div class = "song-ratings">
+            <div class = "song-ratings">
               <h2 class="song-title">Song Title: ${songs.title}</h2>
-              </div>
+            </div>
           
           <div album-song-list>
                 <p > <a href = "${songs.link}"> Link</a></p>
                 <p > Duration: ${songs.duration}</p>
              
             </div>        
-              
-        
        
           <section class="album-comment">
               <h2 class="album-comment-h2">Song Comment:</h2>
