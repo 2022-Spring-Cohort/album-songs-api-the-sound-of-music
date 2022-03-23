@@ -20,7 +20,6 @@ function makeHomeView() {
       const albumsEl = albumContainer.querySelectorAll(".albums");
 
       albumsEl.forEach((album) => {
-        console.log(album);
         let albumIdEl = album.querySelector(".id_album");
         const albumImgEl = album.querySelector(".album-img");
         albumImgEl.addEventListener("click", () => {
@@ -30,7 +29,6 @@ function makeHomeView() {
         });
 
         const albumReviewStars = album.querySelector(".album-ratings");
-        console.log(albumReviewStars);
         let starEl1 = document.createElement("i");
         let albumJson = "";
         albums.forEach((newAlbum) => {
@@ -45,7 +43,6 @@ function makeHomeView() {
           let starEl1 = document.createElement("i");
           starEl1.classList.add("fas");
           starEl1.classList.add("fa-star");
-          console.log(albumReviewStars);
           albumReviewStars.appendChild(starEl1);
         }
         for (let Count2 = 0; Count2 < 5 - albumJson.ratings; Count2++) {
@@ -87,7 +84,6 @@ function addAlbum() {
       })
         .then((res) => res.json())
         .then((albums) => {
-          console.log("here 2");
           makeHomeView();
         });
     } else {
@@ -100,7 +96,6 @@ function makeAlbumView(albumId) {
   fetch(`http://localhost:8080/albums/` + albumId)
     .then((res) => res.json())
     .then((album) => {
-      console.log(album);
       currentAlbum = album;
       albumContainer.innerHTML = header();
       albumContainer.innerHTML += albumView(album);
@@ -108,13 +103,9 @@ function makeAlbumView(albumId) {
 
       const backButton = albumContainer.querySelector(".back-navigation");
       backButton.addEventListener("click", () => {
-        console.log(album);
-        console.log("here 3");
         makeHomeView();
       });
 
-      //const reviewEl = albumContainer.querySelector(".review");
-      // const reviewEl = albumContainer.querySelector(".song-container");
       const reviewEl = albumContainer.querySelector(".ratings");
       let starEl = document.createElement("i");
 
@@ -122,7 +113,6 @@ function makeAlbumView(albumId) {
         let starEl = document.createElement("i");
         starEl.classList.add("fas");
         starEl.classList.add("fa-star");
-        console.log(reviewEl);
         reviewEl.appendChild(starEl);
       }
       for (let Count2 = 0; Count2 < 5 - album.ratings; Count2++) {
@@ -131,8 +121,6 @@ function makeAlbumView(albumId) {
         starEl.classList.add("fa-star");
         reviewEl.appendChild(starEl);
       }
-
-      console.log(starEl);
 
       const songTitleInput = albumContainer.querySelector(".songTitleInput");
       const songLinkInput = albumContainer.querySelector(".songLinkInput");
@@ -150,7 +138,7 @@ function makeAlbumView(albumId) {
           duration: songDurationInput.value,
           ratings: songRatingsInput.value,
         };
-        console.log(newSongJson);
+        
         if (newSongJson.title !== "") {
           fetch(`http://localhost:8080/albums/${albumId}/addSong`, {
             method: "POST",
@@ -173,16 +161,12 @@ function makeAlbumView(albumId) {
       listSongTitleElements.forEach((listSongTitleEl) => {
         listSongTitleEl.addEventListener("click", () => {
           let songId = listSongTitleEl.querySelector("#id").value;
-          // console.log(currentAlbum);
 
           currentAlbum.songs.forEach((song) => {
             if (song.id == songId) {
-              // console.log(song);
               currentSong = song;
             }
           });
-
-          // console.log("song again " + currentSong);
           makeSongView(songId);
         });
       });
@@ -228,7 +212,7 @@ function makeAlbumView(albumId) {
         })
           .then((res) => res.json())
           .then((newAlbums) => {
-            makeAlbumView(albumId);
+            makeHomeView();
           });
       });
     });
@@ -261,7 +245,6 @@ function makeSongView(songId) {
   );
   backSongTitleListButton.addEventListener("click", () => {
     makeAlbumView(albumId);
-    // makeHomeView();
   });
 
   // song comment
@@ -280,7 +263,7 @@ function makeSongView(songId) {
       .then((res) => res.json())
       .then((songs) => {});
     alert("Comment added.");
-    location.reload();
+    makeAlbumView(albumId);
   });
 
   // song title update
@@ -293,7 +276,6 @@ function makeSongView(songId) {
     })
       .then((res) => res.json())
       .then((newSongs) => {
-        // makeSongView(songId);
         makeAlbumView(albumId);
       });
   });

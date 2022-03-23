@@ -4,7 +4,6 @@ export default function songView(songs) {
       <iframe width="420" height="315"
       src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1">
       </iframe>
-      <image class="songs-img" src = "${songs}" alt = "picture of the album" width="200" height="200" />
       
       <div class="list-of-songs">
             <div class = "song-ratings">
