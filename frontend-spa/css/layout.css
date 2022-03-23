@@ -6,6 +6,7 @@
 
 .song-list-input {
   display: flex;
+  gap: 2px;
 }
 
 .album-song-container {

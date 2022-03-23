@@ -10,7 +10,7 @@ export default function songView(songs) {
               </div>
           
           <div album-song-list>
-                <p > Link: ${songs.link}</p>
+                <p > <a href = "${songs.link}"> Link</a></p>
                 <p > Duration: ${songs.duration}</p>
              
             </div>        
