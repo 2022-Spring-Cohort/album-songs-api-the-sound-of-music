@@ -4,13 +4,19 @@ export default function songView(songs) {
       <iframe width="420" height="315"
       src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1">
       </iframe>
+      <image class="songs-img" src = "${songs}" alt = "picture of the album" width="200" height="200" />
+      
       <div class="list-of-songs">
             <div class = "song-ratings">
-              <h2 class="song-title">Song Title: ${songs.title}</h2>
+            <p > <a href = "${
+              songs.link
+            }" target = "_blank">  <h2 class="song-title">Song Title: ${
+    songs.title
+  }</h2> </a></p>
             </div>
           
           <div album-song-list>
-                <p > <a href = "${songs.link}"> Link</a></p>
+              
                 <p > Duration: ${songs.duration}</p>
              
             </div>        

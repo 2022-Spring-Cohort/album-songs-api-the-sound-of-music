@@ -1,13 +1,18 @@
 export default function albumView(album) {
   return `
-    <section class="song-container">
+    <section class="song-container" >
+   
         <div class = "flex-container">
         <div class="ratings">
             <h2>Album Title: ${album.title}</h2>
         </div>
-        
+       
         <div class =song-list-input>
             <div song-list-input>
+            <image class="album-img" src = "${
+              album.image
+            }" alt = "picture of the album" width="200" height="200" />
+              
                 ${album.songs
                   .map((song) => {
                     return `
@@ -24,16 +29,16 @@ export default function albumView(album) {
             <div class = "song-input-container
             <div class="song-input">
                 <div>
-                <input type="text" required placeholder="Song Title: " class="songTitleInput"/>
+                <input type="text" required placeholder="Song Title: " class="songTitleInput">
                 </div>
                 <div>
-                <input type="text" placeholder="Song Link: " class="songLinkInput"/>
+                <input type="text" placeholder="Song Link: " class="songLinkInput">
                 </div>
                 <div>
-                <input type="text" placeholder="Song Duration: " class="songDurationInput"/>
+                <input type="text" placeholder="Song Duration: " class="songDurationInput">
                 </div>
                 <div>
-                <input type="text" placeholder="Song Ratings: " class="songRatingsInput" />
+                <input type="text" placeholder="Song Ratings: " class="songRatingsInput" >
                 </div>
                 <div>
                 <button class="addSongButton">Add song</button>

@@ -278,10 +278,9 @@ function makeSongView(songId) {
       body: songCommentInput.value,
     })
       .then((res) => res.json())
-      .then((songs) => {
-        makeAlbumView(albumId);
-        // makeSongView(songId);
-      });
+      .then((songs) => {});
+    alert("Comment added.");
+    location.reload();
   });
 
   // song title update
@@ -311,6 +310,5 @@ function makeSongView(songId) {
       });
   });
 }
-
 
 makeHomeView();
