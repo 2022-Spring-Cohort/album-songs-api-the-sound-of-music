@@ -42,21 +42,21 @@ public class SongController {
         return  songRepo.findAll();
     }  
     @PostMapping("/songs/{id}/addSongComment")
-    public Iterable<Song> addSongComment(@PathVariable long id, @RequestBody String newComment) {
+    public Song addSongComment(@PathVariable long id, @RequestBody String newComment) {
         Song theSong = songRepo.findById(id).get();
         theSong.addComments(newComment);
         songRepo.save(theSong);
 
-        return songRepo.findAll();
+        return theSong;
     }
 
     @PatchMapping("/songs/{id}")
-    public Iterable<Song> UpdateSongName(@PathVariable long id, @RequestBody String newTitle)
+    public Song UpdateSongName(@PathVariable long id, @RequestBody String newTitle)
     {
         Song song  = songRepo.findById(id).get();
         song.updateTitle(newTitle);
         songRepo.save(song);
-        return  songRepo.findAll();
+        return  song;
     }
 
 }

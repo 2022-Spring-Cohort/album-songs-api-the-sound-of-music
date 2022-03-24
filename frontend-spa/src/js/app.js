@@ -261,9 +261,16 @@ function makeSongView(songId) {
       body: songCommentInput.value,
     })
       .then((res) => res.json())
-      .then((songs) => {});
-    alert("Comment added.");
-    makeAlbumView(albumId);
+      .then(song =>{
+        //alert(song);
+        currentSong = song;
+        console.log(song)
+        makeSongView(song.id)
+      });
+    
+
+    //makeSongView
+    //makeAlbumView(albumId);
   });
 
   // song title update
@@ -275,8 +282,9 @@ function makeSongView(songId) {
       body: updateSongInput.value,
     })
       .then((res) => res.json())
-      .then((newSongs) => {
-        makeAlbumView(albumId);
+      .then((song) => {
+        currentSong = song
+        makeSongView(song.id);
       });
   });
 
