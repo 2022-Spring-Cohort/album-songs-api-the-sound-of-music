@@ -23,7 +23,7 @@ export default function home(albums) {
       <input type="text" placeholder="Album Title: " class="albumTitleInput"/>
       <input type="text" placeholder="Album Image: " class="albumImageInput"/>
       <input type="text" placeholder="Record Label: " class="albumRecordLabelInput" />
-      <input type="text" placeholder="Album Ratings: " class="albumRatingsInput" />
+      <input type="text" placeholder="Album Ratings:(int) " class="albumRatingsInput" />
       <button class="addAlbumButton">Add album</button>
   
       

@@ -35,10 +35,10 @@ export default function albumView(album) {
                 <input type="text" placeholder="Song Link: " class="songLinkInput">
                 </div>
                 <div>
-                <input type="text" placeholder="Song Duration: " class="songDurationInput">
+                <input type="text" placeholder="Song Duration:(int) " class="songDurationInput">
                 </div>
                 <div>
-                <input type="text" placeholder="Song Ratings: " class="songRatingsInput" >
+                <input type="text" placeholder="Song Ratings:(int) " class="songRatingsInput" >
                 </div>
                 <div>
                 <button class="addSongButton">Add song</button>
